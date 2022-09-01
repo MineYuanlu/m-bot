@@ -1,0 +1,33 @@
+.play-info {
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 3px;
+    position: relative;
+}
+.play-info:hover{
+    transition: box-shadow 0.3s;
+    box-shadow: rgba(0,0,0,0.5) 2px 2px 4px;
+}
+.play-info table{
+    border: none;
+}
+.play-info table td{
+    line-height: 24px;
+    height: 24px;
+}
+.play-info table td:first-child{
+    text-align: right;
+    border-right: rgba(0,0,0,0.3) 1px solid;
+}
+
+.play-info .online-t {
+    color:green;
+}
+
+.play-info .online-f {
+    color: red;
+}
+.play-info .id{
+    position: absolute;
+    right: 3px;
+    bottom: 3px;color: rgba(0,0,0,0.5);
+}
