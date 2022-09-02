@@ -1,11 +1,9 @@
 package bid.yuanlu.mc.bot.web
 
-import bid.yuanlu.mc.bot.Core
 import freemarker.cache.ClassTemplateLoader
 import io.ktor.server.application.*
 import io.ktor.server.freemarker.*
 import io.ktor.server.http.content.*
-import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 fun Application.configureRouting() {
@@ -14,15 +12,14 @@ fun Application.configureRouting() {
     }
 
     routing {
-        static("/css") {
-            resources("templates/css")
+        static("/") {
+            staticBasePackage = "web"
+            resources(".")
+            defaultResource("index.html")
         }
-        get("/") {
-            call.respond(FreeMarkerContent("index.ftl", mapOf("data" to IndexData(Core.PLAYS)), ""))
-        }
-        get("/play"){
-          val id= call.request.queryParameters["id"];
-
+        static("/console") {
+            staticBasePackage = "web"
+            defaultResource("console.html")
         }
     }
 }
